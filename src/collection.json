@@ -1,0 +1,16 @@
+{
+  "schematics": {
+    "core": {
+      "aliases": [ "cor" ],
+      "description": "Generates schematic Core Store module for ngrx",
+      "factory": "./core",
+      "schema": "./core/schema.json"
+    },
+    "features": {
+      "aliases": [ "fea" ],
+      "description": "Generates schematic Feature module with ngrx",
+      "factory": "./features",
+      "schema": "./features/schema.json"
+    }
+  }
+}
