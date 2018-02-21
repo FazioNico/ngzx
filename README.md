@@ -2,6 +2,13 @@
 
 This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
 
+### Using
+
+```
+# Create Features Module with NgRx Store as Features:
+$ ng g features toto3 --flat false --group false --collection ngzx
+```
+
 ### Testing
 
 To test locally, install `@angular-devkit/schematics` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
@@ -25,4 +32,3 @@ npm publish
 ```
 
 That's it!
- 
