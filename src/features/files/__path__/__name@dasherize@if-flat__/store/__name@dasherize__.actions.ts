@@ -10,7 +10,7 @@ export const <%= classify(name) %>Actions = {
 
 export class Action_NameAction extends NgRxAction<any> { type = <%= classify(name) %>Actions.ACTION_NAME; }
 
-export class SuccessAction extends NgRxAction<any> { type = <%= classify(name) %>Actions.ERROR; }
+export class SuccessAction extends NgRxAction<any> { type = <%= classify(name) %>Actions.SUCCESS; }
 export class ErrorAction extends NgRxAction<any> { type = <%= classify(name) %>Actions.ERROR; }
 
 export type T<%= classify(name) %>Actions =

@@ -3,21 +3,31 @@
   "version": "0.0.0",
   "description": "A schematics",
   "scripts": {
+    "dev": "tsc -p tsconfig.json -w",
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && jasmine **/*_spec.js"
   },
   "keywords": [
     "schematics"
   ],
-  "author": "",
+  "author": "Nicolas Fazio",
+  "homepage": "https://github.com/FazioNico/ngzx#readme",
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^0.4.0",
     "@angular-devkit/schematics": "^0.4.0",
+    "@schematics/angular": "^0.4.2",
     "@types/jasmine": "^2.6.0",
     "@types/node": "^8.0.31",
     "jasmine": "^2.8.0",
     "typescript": "^2.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FazioNico/ngzx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FazioNico/ngzx/issues"
   }
 }

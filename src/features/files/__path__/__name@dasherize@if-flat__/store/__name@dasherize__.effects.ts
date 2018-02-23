@@ -16,13 +16,13 @@ export class <%= classify(name) %>Effects {
 
   constructor(
     private action$: Actions,
-    private _<%= dasherize(name) %>: <%= classify(name) %>Service
+    private _<%= classify(name) %>Service: <%= classify(name) %>Service
   ) {
   }
 
   @Effect() Action_NameAction$: Observable<Action> = this.action$.pipe(
     ofType(<%= classify(name) %>.<%= classify(name) %>Actions.ACTION_NAME),
-    switchMap((action) => this._<%= dasherize(name) %>.get()),
+    switchMap((action) => this._<%= classify(name) %>Service.get()),
     switchMap(result =>
       (result.code === 200)
         ? of(new <%= classify(name) %>.SuccessAction(result))

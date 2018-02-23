@@ -1,4 +1,4 @@
-import { normalize } from '@angular-devkit/core';
+import { normalize, strings } from '@angular-devkit/core';
 import {
   Rule,
   SchematicsException,
@@ -14,7 +14,7 @@ import {
 } from '@angular-devkit/schematics';
 import * as stringUtils from '../strings';
 import { Schema as ActionOptions } from './schema';
-stringUtils.classify
+//stringUtils.classify
 export default function(options: ActionOptions): Rule {
   options.path = options.path ? normalize(options.path) : options.path;
   const sourceDir = options.sourceDir;
@@ -29,7 +29,8 @@ export default function(options: ActionOptions): Rule {
           options.flat ? '' : s,
           options.group ? 'actions' : ''
         ),
-      ...({...stringUtils} as object),
+      ...({...strings} as object),
+      ...strings,
       ...(options as object),
       dot: () => '.',
     }),

@@ -20,14 +20,14 @@ for more info on providers and Angular 2 DI.
 @Injectable()
 export class <%= classify(name) %>Service extends HttpService {
 
-  private readonly _<%= dasherize(name) %>Url: string = '/<%= dasherize(name) %>';
+  private readonly _<%= classify(name) %>Url: string = '/<%= classify(name) %>';
 
   constructor(public http: HttpClient) {
     super(http);
   }
 
   get(): Observable<any> {
-    this.path = this._<%= dasherize(name) %>Url;
+    this.path = this._<%= classify(name) %>Url;
     return this.get()
     .pipe(
       map(res => res || {}),
@@ -39,7 +39,7 @@ export class <%= classify(name) %>Service extends HttpService {
   }
 
   post(_creds: any): Observable<any> {
-    this.path = this._<%= dasherize(name) %>Url;
+    this.path = this._<%= classify(name) %>Url;
     return this.post(_creds)
     .pipe(
       catchError(err => of({

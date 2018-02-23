@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { AppStoreService } from '../../store/app-store.service';
 import { AppStateI } from '../../store/app-state';
-import * as <%= dasherize(name) %> from './<%= dasherize(name) %>.actions';
+import * as <%= classify(name) %> from './<%= dasherize(name) %>.actions';
 import { I<%= classify(name) %>State } from './<%= dasherize(name) %>.reducer';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class <%= classify(name) %>StoreService extends AppStoreService {
 
 
   dispatchActionNameAction(): void {
-    this.dispatchAction(new <%= dasherize(name) %>.Action_NameAction());
+    this.dispatchAction(new <%= classify(name) %>.Action_NameAction());
   }
 
 

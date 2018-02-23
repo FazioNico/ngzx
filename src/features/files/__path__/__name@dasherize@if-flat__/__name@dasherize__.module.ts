@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { <%= classify(name) %>Component } from './components';
 import { routing } from './<%= dasherize(name) %>.routing';
@@ -18,6 +19,7 @@ import { <%= classify(name) %>StoreModule } from './store/<%= dasherize(name) %>
   providers: [
     <%= classify(name) %>Service
   ],
+  exports: [RouterModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class <%= classify(name) %>Module { }

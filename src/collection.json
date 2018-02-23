@@ -6,9 +6,15 @@
       "factory": "./core",
       "schema": "./core/schema.json"
     },
+    "store": {
+      "aliases": [ "sto" ],
+      "description": "Generates schematic Core Store module with ngrx",
+      "factory": "./store",
+      "schema": "./store/schema.json"
+    },
     "features": {
       "aliases": [ "fea" ],
-      "description": "Generates schematic Feature module with ngrx",
+      "description": "Generates schematic Feature Store module with ngrx",
       "factory": "./features",
       "schema": "./features/schema.json"
     }
