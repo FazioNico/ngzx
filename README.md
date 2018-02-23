@@ -5,8 +5,11 @@ This repository is a basic Schematic implementation that serves as a starting po
 ### Using
 
 ```
+# Create Core App-Store Module with NgRx Store as Features:
+$ ng g store --collection ngzx
+
 # Create Features Module with NgRx Store as Features:
-$ ng g features toto3 --flat false --group false --collection ngzx
+$ ng g features Name --collection ngzx
 ```
 
 ### Testing
