@@ -30,10 +30,13 @@ export default function(options: ActionOptions): Rule {
     if (!sourceDir) {
       throw new SchematicsException(`sourceDir option is required.`);
     }
+    if (host.exists('/src/app/store/app-store.module.ts')) {
+      throw new Error('/src/app/store/app-store.module.ts file alerady exist ');
+    }
 
     options.path = options.path ? normalize(options.path) : options.path;
-    options.module = options.module || 'app.module.ts';
-    options.module = options.module || findModuleFromOptions(host, options) ||'app.module.ts';
+    options.module = options.module ||'/src/app/app.module.ts';
+    options.module = options.module || findModuleFromOptions(host, options) || '/src/app/app.module.ts';
 
     const templateSource = apply(url('./files'), [
       options.spec ? noop() : filter(path => !path.endsWith('__spec.ts')),
@@ -66,8 +69,7 @@ export default function(options: ActionOptions): Rule {
 function addImportsToModule(options: ActionOptions): Rule {
   return (host: Tree) => {
 
-    options.module = '/src/app/app.module.ts';
-    const modulePath = options.module;
+    const modulePath = options.module || '';
 
     if (!host.exists(modulePath)) {
       throw new Error('modulePath file cannot be located: '+ modulePath);
@@ -86,7 +88,6 @@ function addImportsToModule(options: ActionOptions): Rule {
     }
   };
 }
-
 
 export function insert(host: Tree, modulePath: string, changes: Change[]) {
   const recorder = host.beginUpdate(modulePath);
