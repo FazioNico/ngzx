@@ -9,4 +9,5 @@ export interface Schema {
   spec?: boolean;
   flat?: boolean;
   group?: boolean;
+  module?: string;
 }
